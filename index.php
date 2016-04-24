@@ -9,6 +9,7 @@ if(!isset($_REQUEST['c']))
     $controller = new controller;
     $controller->Index();    
 } else {
+    session_start();
     // Obtenemos el controlador que queremos cargar
     $controller = $_REQUEST['c'];
     $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
