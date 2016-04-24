@@ -55,6 +55,17 @@ class controller{
             require_once 'views/footer.inc';
         }
     }  
+    public function listadoPacientes(){               
+        $datosPacientes = $this->myModel->get_datos_pacientes($_SESSION['iddoctor']);
+        require_once 'views/pacientes.php';                           
+        require_once 'views/footer.inc';
+    }
+    public function listadoPacientes2(){               
+            require_once 'views/header.inc';
+        $datosPacientes = $this->myModel->get_datos_pacientes($_SESSION['iddoctor']);
+        require_once 'views/pacientes.php';                           
+        require_once 'views/footer.inc';
+    }
     public function agregarDoctor(){      
        $datos = $this->myModel->add_doctor($_REQUEST['nombre'],$_REQUEST['paterno'],$_REQUEST['materno'],$_REQUEST['tel'],$_REQUEST['email'],$_REQUEST['pass'],$_REQUEST['cedula'],$_REQUEST['fechan'],$_REQUEST['curp']);
        if($datos > 0){
